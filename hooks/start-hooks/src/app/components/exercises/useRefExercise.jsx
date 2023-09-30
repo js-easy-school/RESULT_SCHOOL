@@ -1,14 +1,6 @@
-import React, { useRef } from "react";
+import React from "react";
 import CollapseWrapper from "../common/collapse";
 const UseRefExercise = () => {
-    const blockRef = useRef(null);
-
-    const handleClick = () => {
-        blockRef.current.textContent = "text";
-        blockRef.current.style.width = "150px";
-        blockRef.current.style.height = "80px";
-    };
-
     return (
         <CollapseWrapper title="Упражнение">
             <p className="mt-3">
@@ -21,14 +13,13 @@ const UseRefExercise = () => {
             </ul>
             <div
                 className="bg-primary d-flex flex-row justify-content-center align-items-center rounded"
-                ref={blockRef}
                 style={{
                     height: 40,
                     width: 60,
                     color: "white"
                 }}
             >
-                <small onClick={handleClick}>Блок</small>
+                <small>Блок</small>
             </div>
         </CollapseWrapper>
     );
