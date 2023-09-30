@@ -21,7 +21,11 @@ const getTwoParagraph = (text) => {
     return arrParagraph.length > 2
         ? [
             ...arrParagraph.slice(0, 2),
+<<<<<<< HEAD
             "Для продолжения оформите подписку"
+=======
+            "Открыть"
+>>>>>>> 5da6a97 (Initial commit)
         ].join("\n")
         : text;
 };
@@ -32,12 +36,25 @@ const Text = ({ text }) => {
 
 const CheckSubscrube = () => {
     const [isSubscribe, setIsSubscribe] = useState(false);
+<<<<<<< HEAD
     const myText = <Text text={someText}/>;
 
     const nextText = React.cloneElement(myText, {
         text: isSubscribe
             ? myText.props.text
             : getTwoParagraph(myText.props.text)
+=======
+
+    // Получаем элемент
+    const myText = <Text text={someText}/>;
+
+    // Клонируем его
+    const nextText = React.cloneElement(myText, {
+        // Меняем пропс text
+        text: isSubscribe // если подписан
+            ? myText.props.text // вернуть просто текст
+            : getTwoParagraph(myText.props.text) // иначе обрезать
+>>>>>>> 5da6a97 (Initial commit)
     });
 
     return (
